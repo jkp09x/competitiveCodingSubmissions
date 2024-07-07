@@ -7,7 +7,7 @@ public:
         
         while (result) {
             count += result & 1;
-            result >>= 1;
+            result = result >> 1;
         }
         
         return count;
