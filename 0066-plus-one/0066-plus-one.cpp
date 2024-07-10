@@ -1,8 +1,6 @@
 class Solution {
 public:
-    vector<int> plusOne(vector<int>& digits) {
-        int result = 0;
-        
+    vector<int> plusOne(vector<int>& digits) {   
         // add 1 to last element
         digits[digits.size()-1] += 1;
         
