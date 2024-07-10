@@ -13,14 +13,19 @@ public:
                 digits[i] = 0;
                 if (i > 0)
                     digits[i-1] += 1;
+                if (i == 0)
+                {
+                    digits[i] = 1;
+                    digits.push_back(0);
+                }
             }
         }
         
-        if (digits[0] == 0)
-        {
-            // insert element in front for overflow
-            digits.insert(digits.begin(), 1);
-        }
+        // if (digits[0] == 0)
+        // {
+        //     // insert element in front for overflow
+        //     digits.insert(digits.begin(), 1);
+        // }
         
         return digits;
     }
