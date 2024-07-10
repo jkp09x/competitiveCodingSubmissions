@@ -9,14 +9,10 @@ public:
         for (int i = 0; i < std::max(n,m); ++i)
         {
             if (i <= n)
-            {
                 result ^= s[i];
-            }
             
             if (i <= m)
-            {
                 result ^= t[i];
-            }
         }
 
         return result;
