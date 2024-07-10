@@ -21,12 +21,6 @@ public:
             }
         }
         
-        // if (digits[0] == 0)
-        // {
-        //     // insert element in front for overflow
-        //     digits.insert(digits.begin(), 1);
-        // }
-        
         return digits;
     }
 };
