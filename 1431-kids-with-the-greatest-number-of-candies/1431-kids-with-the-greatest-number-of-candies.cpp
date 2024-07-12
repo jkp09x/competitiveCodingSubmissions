@@ -1,22 +1,27 @@
 class Solution {
 public:
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-        int kidWithMaxCandies = -1;
-        vector<bool> result(candies.size(), false);
+        const int numKids = candies.size();
+        const int maxCandy = getMaxCandy(candies);
         
-        // Get max value of candies
-        for (int elem: candies)
-        {
-            if (kidWithMaxCandies < elem)
-                kidWithMaxCandies = elem;
+        vector<bool> hasGreatestNumCandies(numKids, false);
+        
+        for (int i = 0; i < numKids; ++i) {
+            if (candies[i] + extraCandies >= maxCandy)
+                hasGreatestNumCandies[i] = true;
         }
         
-        for(int i = 0; i < candies.size(); ++i)
-        {
-            if (candies[i] + extraCandies >= kidWithMaxCandies)
-                result[i] = true;
+        return hasGreatestNumCandies;
+    }
+private:
+    int getMaxCandy(const vector<int>& candies) {
+        int maxCandy = -1;
+        
+        for (int candy: candies) {
+            if (maxCandy < candy)
+                maxCandy = candy;
         }
         
-        return result;
+        return maxCandy;
     }
 };
