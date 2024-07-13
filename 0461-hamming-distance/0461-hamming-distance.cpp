@@ -1,15 +1,15 @@
 class Solution {
 public:
     int hammingDistance(int x, int y) {
-        int result = x ^ y;
         
-        int count = 0;
+        int dist = x ^ y;
+        int sum = 0;
         
-        while (result) {
-            count += result & 1;
-            result = result >> 1;
+        while (dist) {
+            sum += dist & 1;
+            dist = dist >> 1;
         }
         
-        return count;
+        return sum;
     }
 };
